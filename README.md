@@ -182,5 +182,128 @@ public static void Decompress(FileInfo fileToDecompress)
 **[Read Text File(MOCK)]** : ```string text = File.ReadAllText(pathToFile, Encoding.UTF8);``` 
 
 
+# Ton_wealth How to add in Android Studio
+
+### This project created when Internship in Wealth
+
+**How To add Git into AndroidStudio**
+1. OpenProject File > Setting > VersionControl
+2. Choose GitHub and add ID/PassWord of GitHub and testConnection 
+3. OpenProject VCS > Import into Version Control > Share Project on GitHub 
+
+**What you need to know run this Project**
+1. Open an existing Android Studio 
+2. Select from your path file
+3. **Minimum Required Android 6.0.1 ,API 23 to Run this Program** 
+4. Add maven in build.gradle(Project)
+```java
+repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+
+    }
+ ```
+ 5. Lib to use this Project
+ ```java
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.github.vihtarb:tooltip:0.2.0'
+    implementation 'me.toptas.fancyshowcase:fancyshowcaseview:1.1.5'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.31"
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
+ ```
+6. Build Gradle to use this Project
+```java
+dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.1'
+    }
+```
+
+**7. Link All Library in use**
+
+1. MPAndroidChart (**graphPage.java**)
+```
+implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+```
+>  **[https://github.com/PhilJay/MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)**
+
+2. Android Tooltips (**FancyShowcase.java**, **customDialog.java**)
+```
+implementation 'com.github.vihtarb:tooltip:0.2.0
+```
+> **[https://github.com/ViHtarb/Tooltip](https://github.com/ViHtarb/Tooltip)**
+
+3. FancyShowCaseView (**FancyShowcase.java**)
+```
+implementation 'me.toptas.fancyshowcase:fancyshowcaseview:1.1.5' 
+```
+> **[https://github.com/faruktoptas/FancyShowCaseView](https://github.com/faruktoptas/FancyShowCaseView)**
+
+4. TapTargetView (**customDialog.java**)
+```
+ implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
+```
+> **[https://github.com/KeepSafe/TapTargetView](https://github.com/KeepSafe/TapTargetView)**
+
+5. Kotlin Interface
+```
+implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.31"
+```
+
+## Android BlockChain with Ethereum
+
+**What I Do ?**
+1.  Generate a contracts **ABI** and **binary** files from a **Solidity File**.
+2.  Use  **web3j**  libraries to generate java wrapper classes from a smart contract’s methods.
+3.  Use  **Infura**  to host an **Ethereum** node remotely that allows us to complete transactions and interact with the blockchain.
+4.  Verify a transaction was made via the **Etherscan blockchain** explorer.
+
+
+**First Step to Run**
+1. add Libraries  [Web3j](https://github.com/web3j/web3j) in your project 
+2.  Create Account in [**Infura**](https://infura.io/) and Create new project on **Infura**
+3. Install  [Solidity](https://solidity.readthedocs.io/en/v0.5.10/index.html) Check Version  ```solc --version. ``` in command line .If it’s not installed, install it globally. ```npm install -g solc```
+4. Load **web3j** and paste inside your project ,Check ```web3j --version```
+
+ **Create a Wallet with Metamask on the Rinkeby Testnet**
+ 1.  First we will need to download the official Metamask browser extension.  
+    [https://metamask.io/](https://metamask.io/). and create your wallet
+    2. Click to Icon **Metamask** change from **Main Ethereum Network** to **Rinkeby Test Network**
+  
+  **Request Ether from the Rinkeby Faucet**
+  1. On a social media profile of your choice, make a post with your public address.  **MAKE SURE THE POST CONTAINS YOUR PUBLIC ADDRESS, NOT YOUR PRIVATE KEY.**
+  2. Copy and paste the URL to this post inside of the  _Give me Ether_  Field.
+  
+  
+  **Deploy the Contract**
+  1. Head to [http://remix.ethereum.org](http://remix.ethereum.org/) and **paste with your solidity contract** in here
+  2. When Success compiler go to verify in **Etherscan** with your address
+  
+  **Generate File with Solidity**
+  1.  Generate your bin and ABI by first copying the solidity file somewhere into your project directory. Type in the following command into your command line. 
+  ```
+  solc <contract>.sol — bin — abi — optimize -o <output-dir>/
+  ```
+  2. generate your Java code using 
+  ```comand line
+  web3j solidity generate -b /path/to/<smart-contract>.bin -a /path/to/<smart-
+  contract>.abi -o /path/to/src/main/java -p com.your.organisation.name
+  ```
+
+  # Create .obb File and Unzip (In lib2)
+
+**APK Expansion Files**. Google Play requires that the compressed APK that users download be no more than 100MB .So I createed Expansion Files for upload in GoogleStore(APK + File.obb) 
+
+**How toCreate File.obb**
+1.  First,I use **WinRar** to archive in Expansion Files and convert it to **File.obb**.Setting Archive to **Storage** only. **0% compression**
+2. Unzip File using  **Zip4j** library 
+	```
+	new ZipFile("filename.zip").extractAll("/destination_directory");
+	```
+*NOTE:* **Google Play Store when download expansion Files on your devie, It's not to unzip but read and use them.**
+
+You can read about APK Expansion Files is [HERE](https://developer.android.com/google/play/expansion-files.html#Overview)
+
 
 
