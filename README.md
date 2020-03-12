@@ -1,4 +1,4 @@
-# งานนี้ทำตอนฝึกงานไม่สามารถเปิดเผยตัวโปรเเกรมได้จึงไน้นำเอกสาร ReadMe ที่ข้าพเจ้าได้เขียนการทำงานไว้มาโชว์
+# งานนี้ทำตอนฝึกงานไม่สามารถเปิดเผยตัวโปรเเกรมได้จึงนำเอกสาร ReadMe ที่ข้าพเจ้าได้เขียนการทำงานไว้มาโชว์
 # App Store Connect API
 Automate tasks on the Apple Developer website and App Store Connect.I create link in **navBar**
 
